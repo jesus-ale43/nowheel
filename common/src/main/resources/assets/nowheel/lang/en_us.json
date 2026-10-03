@@ -11,6 +11,7 @@
   "nowheel.config.context.gameplay": "Gameplay",
   "nowheel.key.category": "NoWheel",
   "nowheel.key.toggle": "Toggle NoWheel",
-  "nowheel.toggle.on": "NoWheel ON",
-  "nowheel.toggle.off": "NoWheel OFF"
+  "nowheel.toggle.message": "NoWheel %s",
+  "nowheel.toggle.on": "ON",
+  "nowheel.toggle.off": "OFF"
 }
