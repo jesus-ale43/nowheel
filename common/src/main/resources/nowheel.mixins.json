@@ -4,8 +4,7 @@
   "package": "net.uku3lig.nowheel.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
-    "MixinMouseHandler",
-    "MixinMinecraft"
+    "MixinMouseHandler"
   ],
   "injectors": {
     "defaultRequire": 1

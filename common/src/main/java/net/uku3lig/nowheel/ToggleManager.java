@@ -12,8 +12,6 @@ public final class ToggleManager {
     public static final KeyMapping.Category CATEGORY =
             KeyMapping.Category.register(Identifier.fromNamespaceAndPath("nowheel", "nowheel"));
 
-    private static KeyMapping toggle;
-
     private ToggleManager() {
     }
 
@@ -21,31 +19,13 @@ public final class ToggleManager {
         return new KeyMapping("nowheel.key.toggle", InputConstants.Type.KEYBOARD, InputConstants.UNKNOWN.getValue(), CATEGORY);
     }
 
-    public static void setToggle(KeyMapping mapping) {
-        toggle = mapping;
-    }
-
-    public static KeyMapping getToggle() {
-        return toggle;
-    }
-
-    public static void onTick(Minecraft client) {
-        if (toggle == null || client == null) {
-            return;
-        }
-
-        while (toggle.consumeClick()) {
-            toggleEnabled(client);
-        }
-    }
-
-    private static void toggleEnabled(Minecraft client) {
+    public static void toggle(Minecraft client) {
         NoWheelConfig config = NoWheelConfig.get();
         boolean enabled = !config.isEnabled();
         config.setEnabled(enabled);
         NoWheelConfig.manager.saveConfig();
 
-        if (client.player != null) {
+        if (client != null && client.player != null) {
             client.player.sendOverlayMessage(Component.translatable(enabled ? "nowheel.toggle.on" : "nowheel.toggle.off")
                     .withStyle(enabled ? ChatFormatting.GREEN : ChatFormatting.RED));
         }
