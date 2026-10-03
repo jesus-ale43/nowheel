@@ -18,6 +18,7 @@ public class NoWheelConfig implements Serializable {
 
     private Direction disabledDirection = Direction.ALL;
     private Context disableContext = Context.HOTBAR;
+    private boolean enabled = true;
 
     public static NoWheelConfig get() {
         return manager.getConfig();

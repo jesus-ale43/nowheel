@@ -1,4 +1,5 @@
 {
+  "nowheel.config.enabled": "Enabled",
   "nowheel.config.disabledDirection": "Disabled Directions",
   "nowheel.config.disableContext": "Disabled Context",
   "nowheel.config.disableContext.tooltip": "In which contexts to disable the scroll wheel.",
@@ -7,5 +8,7 @@
   "nowheel.config.direction.horizontal": "Horizontal",
   "nowheel.config.direction.none": "None",
   "nowheel.config.context.hotbar": "Hotbar",
-  "nowheel.config.context.gameplay": "Gameplay"
+  "nowheel.config.context.gameplay": "Gameplay",
+  "nowheel.key.category": "NoWheel",
+  "nowheel.key.toggle": "Toggle NoWheel"
 }

@@ -15,6 +15,7 @@ public class NoWheelConfigScreen extends AbstractConfigScreen<NoWheelConfig> {
     @Override
     protected WidgetCreator[] getWidgets(NoWheelConfig config) {
         return new WidgetCreator[] {
+                CyclingOption.ofBoolean("nowheel.config.enabled", config.isEnabled(), config::setEnabled),
                 CyclingOption.ofTranslatableEnum("nowheel.config.disabledDirection", NoWheelConfig.Direction.class, config.getDisabledDirection(), config::setDisabledDirection),
                 CyclingOption.ofTranslatableEnum("nowheel.config.disableContext", NoWheelConfig.Context.class, config.getDisableContext(), config::setDisableContext,
                         OptionInstance.cachedConstantTooltip(Component.translatable("nowheel.config.disableContext.tooltip"))),

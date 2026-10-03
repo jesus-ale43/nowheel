@@ -17,6 +17,11 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 public class MixinMouseHandler {
     @WrapMethod(method = "onScroll")
     public void disableGlobalScroll(long handle, double xoffset, double yoffset, Operation<Void> original) {
+        if (!NoWheelConfig.get().isEnabled()) {
+            original.call(handle, xoffset, yoffset);
+            return;
+        }
+
         if (NoWheelConfig.get().getDisableContext() == NoWheelConfig.Context.ALL) {
             if (NoWheelConfig.get().getDisabledDirection().isHoriz()) xoffset = 0;
             if (NoWheelConfig.get().getDisabledDirection().isVert()) yoffset = 0;
@@ -27,6 +32,10 @@ public class MixinMouseHandler {
 
     @WrapOperation(method = "onScroll", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/ScrollWheelHandler;onMouseScroll(DD)Lorg/joml/Vector2i;"))
     public Vector2i disableGameplayScroll(ScrollWheelHandler instance, double scaledXScrollOffset, double scaledYScrollOffset, Operation<Vector2i> original, @Share("fixedVec") LocalRef<Vector2i> fixedVecRef) {
+        if (!NoWheelConfig.get().isEnabled()) {
+            return original.call(instance, scaledXScrollOffset, scaledYScrollOffset);
+        }
+
         Vector2i vec = original.call(instance, scaledXScrollOffset, scaledYScrollOffset);
         if (NoWheelConfig.get().getDisabledDirection().isHoriz()) vec.x = 0;
         if (NoWheelConfig.get().getDisabledDirection().isVert()) vec.y = 0;
@@ -41,6 +50,10 @@ public class MixinMouseHandler {
 
     @ModifyArg(method = "onScroll", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/ScrollWheelHandler;getNextScrollWheelSelection(DII)I"))
     public double onHotbarScroll(double wheel, @Share("fixedVec") LocalRef<Vector2i> fixedVecRef) {
+        if (!NoWheelConfig.get().isEnabled()) {
+            return wheel;
+        }
+
         if (NoWheelConfig.get().getDisableContext() == NoWheelConfig.Context.HOTBAR) {
             Vector2i wheelXY = fixedVecRef.get();
             wheel = wheelXY.y == 0 ? -wheelXY.x : wheelXY.y;
