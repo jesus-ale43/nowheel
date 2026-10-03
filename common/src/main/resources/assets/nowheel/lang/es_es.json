@@ -7,11 +7,11 @@
   "nowheel.config.direction.vertical": "Vertical",
   "nowheel.config.direction.horizontal": "Horizontal",
   "nowheel.config.direction.none": "Ninguna",
-  "nowheel.config.context.hotbar": "Barra rápida",
+  "nowheel.config.context.hotbar": "Hotbar",
   "nowheel.config.context.gameplay": "Jugabilidad",
-  "nowheel.key.category": "NoWheel",
   "nowheel.key.toggle": "Alternar NoWheel",
+  "key.category.nowheel.nowheel": "NoWheel",
   "nowheel.toggle.message": "NoWheel %s",
-  "nowheel.toggle.on": "activado",
-  "nowheel.toggle.off": "desactivado"
+  "nowheel.toggle.on": "ACTIVADO",
+  "nowheel.toggle.off": "DESACTIVADO"
 }

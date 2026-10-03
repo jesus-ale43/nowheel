@@ -9,9 +9,9 @@
   "nowheel.config.direction.none": "Nenhuma",
   "nowheel.config.context.hotbar": "Barra de itens",
   "nowheel.config.context.gameplay": "Jogabilidade",
-  "nowheel.key.category": "NoWheel",
   "nowheel.key.toggle": "Alternar NoWheel",
+  "key.category.nowheel.nowheel": "NoWheel",
   "nowheel.toggle.message": "NoWheel %s",
-  "nowheel.toggle.on": "ativado",
-  "nowheel.toggle.off": "desativado"
+  "nowheel.toggle.on": "ATIVADO",
+  "nowheel.toggle.off": "DESATIVADO"
 }
