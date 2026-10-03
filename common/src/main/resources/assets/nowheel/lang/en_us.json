@@ -10,5 +10,7 @@
   "nowheel.config.context.hotbar": "Hotbar",
   "nowheel.config.context.gameplay": "Gameplay",
   "nowheel.key.category": "NoWheel",
-  "nowheel.key.toggle": "Toggle NoWheel"
+  "nowheel.key.toggle": "Toggle NoWheel",
+  "nowheel.toggle.on": "NoWheel ON",
+  "nowheel.toggle.off": "NoWheel OFF"
 }

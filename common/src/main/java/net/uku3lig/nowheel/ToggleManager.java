@@ -46,9 +46,8 @@ public final class ToggleManager {
         NoWheelConfig.manager.saveConfig();
 
         if (client.player != null) {
-            Component state = Component.literal(enabled ? "ON" : "OFF")
-                    .withStyle(enabled ? ChatFormatting.GREEN : ChatFormatting.RED);
-            client.player.sendOverlayMessage(Component.literal("NoWheel ").append(state));
+            client.player.sendOverlayMessage(Component.translatable(enabled ? "nowheel.toggle.on" : "nowheel.toggle.off")
+                    .withStyle(enabled ? ChatFormatting.GREEN : ChatFormatting.RED));
         }
     }
 }

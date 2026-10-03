@@ -1,0 +1,16 @@
+{
+  "nowheel.config.enabled": "Activado",
+  "nowheel.config.disabledDirection": "Direcciones desactivadas",
+  "nowheel.config.disableContext": "Contexto desactivado",
+  "nowheel.config.disableContext.tooltip": "En qué contextos se desactiva la rueda del ratón.",
+  "nowheel.config.all": "Todo",
+  "nowheel.config.direction.vertical": "Vertical",
+  "nowheel.config.direction.horizontal": "Horizontal",
+  "nowheel.config.direction.none": "Ninguna",
+  "nowheel.config.context.hotbar": "Barra rápida",
+  "nowheel.config.context.gameplay": "Jugabilidad",
+  "nowheel.key.category": "NoWheel",
+  "nowheel.key.toggle": "Alternar NoWheel",
+  "nowheel.toggle.on": "NoWheel activado",
+  "nowheel.toggle.off": "NoWheel desactivado"
+}
